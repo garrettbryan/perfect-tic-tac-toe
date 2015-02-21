@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3D T3</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="tttBoard" data-bind="foreach: tileList">
+        <div data-bind="text: name, click: chooseOwner,
+        css: { player: ownedBy() != 0}">
+        </div>
+    </div>
+    <button id="reset" data-bind="click: reset" type="button">Reset</button>
+    <script src="js/lib/knockout-3.2.0.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

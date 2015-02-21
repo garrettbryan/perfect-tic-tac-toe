@@ -1,0 +1,72 @@
+div {
+  border: 1px solid black;
+  height: 100px;
+  width: 100px;
+}
+
+.player{
+  background-color: red;
+}
+
+.computer{
+  background-color: blue;
+}
+
+.tile {
+  height: 100px;
+  width: 100px;
+  display: inline-block;
+  transition: transform 1s;
+
+}
+
+.board-row{
+}
+
+#tttBoard{
+}
+
+#t0 {
+  background-color: red;
+  transform: perspective( 600px ) rotateY( 0deg );
+}
+
+#t1 {
+  background-color: blue;
+  transform: perspective( 600px ) rotateY( 0deg );
+}
+
+#t2 {
+  background-color: green;
+  transform: perspective( 600px ) rotateY( 0deg );
+}
+
+#t3 {
+  background-color: purple;
+  transform: perspective( 600px ) rotateY( 0deg );
+}
+
+#t4 {
+  background-color: yellow;
+  transform: perspective( 600px ) rotateY( 0deg );
+}
+
+#t5 {
+  background-color: green;
+  transform: perspective( 600px ) rotateY( 0deg );
+}
+
+#t6 {
+  background-color: orange;
+  transform: perspective( 600px ) rotateY( 0deg );
+}
+
+#t7 {
+  background-color: gray;
+  transform: perspective( 600px ) rotateY( 0deg );
+}
+
+#t8 {
+  background-color: black;
+  transform: perspective( 600px ) rotateY( 0deg );
+}
