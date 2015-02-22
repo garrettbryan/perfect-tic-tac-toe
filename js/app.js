@@ -8,6 +8,32 @@ for (var i = 0; i < tileCount; i++){
   }
 }
 
+var Game = function() {
+
+};
+
+
+
+var minimax =  function(game){
+  if game.over return (score.game);
+    var scores = [],
+       moves = [];
+    game.getAvailableMoves.forEach(function(move){
+      var possibleGame = game.getNewState(move);
+      scores.push minimax(possibleGame);
+      moves.push move;
+    });
+    //min or max calculation
+    if (game.activeTurn === "player") {
+      var index = 0;
+      var maxScoreIndex = scores.reduce(function(previous,current){
+        return previous > current ? previous:current;
+      });
+      var choice = movesScoreIndex;
+    }
+  }
+}
+
 var Player = function(data) {
   this.color = data.color || red;
 }
