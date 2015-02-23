@@ -23,5 +23,33 @@ README.md
           7 turn C(9,7) = 36
           8 turn C(9,8) = 9
           9 turn C(9,9) = 1
+      3: include board symmetry.
+        a: x|_|_  first optimal moves. corner optimal use center to add variablity.
+           _|x|_
+           _|_|_
+
+        b: x|x|_  first move 3 unique moves.
+           _|x|_  If computer goes first use one board and a apply a random rotation
+           _|_|_    and reflection to hide the algo.
+                  minimize calculations:
+                    -match the board to an optimal look up table.
+                      -3 choices for turn one.
+                      -select the matching look up table.
+                      -apply vaid transformation.
+                      -
+
+                  The best optimal placement of the first piece is either the corner or middle.
+
+        c: x|_|_  second move optimal strategy
+           _|o|_
+           _|_|_
+
+        d: o|_|_
+           _|x|_
+           _|_|_
+
+        d: o|x|_
+           _|o|_
+           o|_|_
 
     2: The player who goes first cannot win until at least move 5.
