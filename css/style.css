@@ -1,6 +1,3 @@
-div {
-}
-
 
 
 .player{
@@ -11,12 +8,71 @@ div {
   background-color: blue;
 }
 
-.tile-container {
-  width: 25%;
-  height: 100px;
-  display: inline-block;
+.center {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.game-container {
   position: relative;
   perspective: 800px;
+  width: 300px;
+  height: 300px;
+}
+
+.vehicle {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.hood {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  backface-visibility: hidden;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  transform-origin: center top;
+  background: white;
+}
+
+.hoodopen {
+  transform: rotateX(60deg);
+}
+
+.engine {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  z-index: -1;
+}
+
+.power-source {
+  width: 300px;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+  z-index: -2;
+}
+
+.tile-container {
+  box-sizing: border-box;
+  width: 30%;
+  height: 30%;
+  margin: 1.5%;
+  float: left;
+  position: relative;
+  transform-style: preserve-3d;
+  z-index: 0;
 }
 
 .tile {
@@ -47,56 +103,61 @@ div {
 }
 
 .flipped{
-  transform: translateX( -100% ) rotateY( -180deg );
+  transform: translateX( -100% ) rotateY( 180deg );
+  z-index: 1;
 }
 
 .board-row{
 }
 
-#tttBoard{
+#game-board{
+  border-bottom: 1px solid black;
+  height: 300px;
+  width: 300px;
+  transform-style: preserve-3d;
 }
 
 #t0 {
   background-color: red;
-  transform: perspective( 600px ) rotateY( 0deg );
+  transform:  rotateY( 0deg );
 }
 
 #t1 {
   background-color: blue;
-  transform: perspective( 600px ) rotateY( 0deg );
+  transform:  rotateY( 0deg );
 }
 
 #t2 {
   background-color: green;
-  transform: perspective( 600px ) rotateY( 0deg );
+  transform:  rotateY( 0deg );
 }
 
 #t3 {
   background-color: purple;
-  transform: perspective( 600px ) rotateY( 0deg );
+  transform:  rotateY( 0deg );
 }
 
 #t4 {
   background-color: yellow;
-  transform: perspective( 600px ) rotateY( 0deg );
+  transform:  rotateY( 0deg );
 }
 
 #t5 {
   background-color: green;
-  transform: perspective( 600px ) rotateY( 0deg );
+  transform:  rotateY( 0deg );
 }
 
 #t6 {
   background-color: orange;
-  transform: perspective( 600px ) rotateY( 0deg );
+  transform:  rotateY( 0deg );
 }
 
 #t7 {
   background-color: gray;
-  transform: perspective( 600px ) rotateY( 0deg );
+  transform:  rotateY( 0deg );
 }
 
 #t8 {
   background-color: black;
-  transform: perspective( 600px ) rotateY( 0deg );
+  transform:  rotateY( 0deg );
 }

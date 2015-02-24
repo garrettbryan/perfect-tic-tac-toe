@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>3D T3</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
@@ -25,31 +26,43 @@
         </div>
         <div class="row">
             <div class="col-xs-2">
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
             </div>
             <div class="col-xs-8">
-                <div id="game-board">
-                    <div id="tttBoard" data-bind="foreach: tileList">
-                        <div class="tile-container">
-                          <div class="tile" data-bind="click: chooseOwner, css: { flipped: player() != 0}">
-                            <div class="front"></div>
-                            <div class="back" data-bind="text: player(), css: { player: player() != 0}"></div>
-                          </div>
+                <div class="game-container">
+                    <div class="vehicle">
+                        <div class="hood" data-bind="css: { hoodopen: hoodOpen() == 1}">
+                            <div id="game-board" class="center" data-bind=" foreach: tileList">
+                                <div class="tile-container">
+                                  <div class="tile" data-bind="click: chooseOwner, css: { flipped: flipped() != 0}">
+                                    <div class="front"></div>
+                                    <div class="back" data-bind="text: player(), css: { player: player() != 0}"></div>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="engine">
+                            <img class="power-source" src="img/giphy.gif">
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-xs-2">
+                <span class="glyphicon glyphicon-education" aria-hidden="true"></span>
+
             </div>
         </div>
         <div class="row">
             <div class="col-xs-2">
             </div>
-            <div class="col-xs-8"> TIC TAC TOE
+            <div class="col-xs-8"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
             </div>
             <div class="col-xs-2">
             </div>
         </div>
         <button id="reset" data-bind="click: reset" type="button">Reset</button>
+        <button id="settings" data-bind="click: openHood" type="button">Settings</button>
     </div>
     <script src="js/lib/knockout-3.2.0.js"></script>
     <script src="js/app.js"></script>
