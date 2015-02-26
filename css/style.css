@@ -1,4 +1,6 @@
-
+body {
+  background-color: #C8C8C8;
+}
 
 .player{
   background-color: red;
@@ -107,6 +109,11 @@
   z-index: 1;
 }
 
+.player-mark {
+  text-align: center;
+  margin: 7.5% 0;
+}
+
 .board-row{
 }
 
@@ -151,13 +158,29 @@
   font-size: 0.7em;
 }
 
-#light-bulb{
+#cog {
   position: absolute;
   left: 0;
   width: 100%;
   text-align: center;
   margin-top: -1.2em;
   color: black !important;
+}
+
+#light-bulb{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  margin-top: -1.2em;
+  color: white !important;
+background: rgba(240,220,93,1);
+background: -moz-radial-gradient(center, ellipse cover, rgba(240,220,93,1) 0%, rgba(252,246,210,1) 0%, rgba(252,246,210,1) 14%, rgba(252,246,210,0) 71%);
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(240,220,93,1)), color-stop(0%, rgba(252,246,210,1)), color-stop(14%, rgba(252,246,210,1)), color-stop(71%, rgba(252,246,210,0)));
+background: -webkit-radial-gradient(center, ellipse cover, rgba(240,220,93,1) 0%, rgba(252,246,210,1) 0%, rgba(252,246,210,1) 14%, rgba(252,246,210,0) 71%);
+background: -o-radial-gradient(center, ellipse cover, rgba(240,220,93,1) 0%, rgba(252,246,210,1) 0%, rgba(252,246,210,1) 14%, rgba(252,246,210,0) 71%);
+background: -ms-radial-gradient(center, ellipse cover, rgba(240,220,93,1) 0%, rgba(252,246,210,1) 0%, rgba(252,246,210,1) 14%, rgba(252,246,210,0) 71%);
+background: radial-gradient(ellipse at center, rgba(240,220,93,1) 0%, rgba(252,246,210,1) 0%, rgba(252,246,210,1) 14%, rgba(252,246,210,0) 71%);
 }
 
 .fa-halfx {

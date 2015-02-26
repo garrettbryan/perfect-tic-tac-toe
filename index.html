@@ -33,8 +33,9 @@
                             <div id="game-board" class="center" data-bind=" foreach: tileList">
                                 <div class="tile-container">
                                   <div class="tile" data-bind="click: chooseOwner, css: { flipped: flipped() != 0}">
-                                    <div class="front"></div>
-                                    <div class="back" data-bind="text: player(), css: { player: player() != 0}"></div>
+                                    <div class="front">
+                                    </div>
+                                    <div class="back" data-bind="html: player"></div>
                                   </div>
                                 </div>
                             </div>
@@ -56,14 +57,15 @@
                 </div>
             </div>
             <div class="col-xs-4">
-
+                <h5 class"text-center">Time: <strong data-bind="text: gameTime()"></strong></h5>
             </div>
             <div class="col-xs-4">
                 <div class="icon">
                     <span class="fa-stack fa-3x text-center" id="">
                         <strong class="fa fa-android fa-stack-2x" id=""></strong>
                         <strong class="fa fa-wrench fa-stack-1x" id="android-wrench" data-bind="click: openHood"></strong>
-                        <strong class="fa fa-lightbulb-o fa-stack-1x" id="light-bulb"></strong>
+                        <strong data-bind="visible: decision()" class="fa fa-lightbulb-o fa-stack-1x" id="light-bulb"></strong>
+                        <strong data-bind="visible: thinking()" class="fa fa-cog fa- fa-stack-1x fa-spin" id="cog"></strong>
                     </span>
                 </div>
             </div>
