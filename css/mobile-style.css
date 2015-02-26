@@ -1,0 +1,182 @@
+
+
+.player{
+  background-color: red;
+}
+
+.computer{
+  background-color: blue;
+}
+
+.center {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+.game-container {
+  position: relative;
+  perspective: 800px;
+  width: 300px;
+  height: 300px;
+}
+
+.vehicle {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.hood {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  backface-visibility: hidden;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  transform-origin: center top;
+  background: white;
+}
+
+.hoodopen {
+  transform: rotateX(60deg);
+}
+
+.engine {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  z-index: -1;
+}
+
+.power-source {
+  width: 300px;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+  z-index: -2;
+}
+
+.tile-container {
+  box-sizing: border-box;
+  width: 30%;
+  height: 30%;
+  margin: 1.5%;
+  float: left;
+  position: relative;
+  transform-style: preserve-3d;
+  z-index: 0;
+}
+
+.tile {
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  display: inline-block;
+  position: absolute;
+  transform-origin: right center;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.tile > div {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.tile .front {
+  background: white;
+}
+
+.tile .back {
+  transform: rotateY( 180deg );
+}
+
+.flipped{
+  transform: translateX( -100% ) rotateY( 180deg );
+  z-index: 1;
+}
+
+.board-row{
+}
+
+#game-board{
+  border-bottom: 1px solid black;
+  height: 300px;
+  width: 300px;
+  transform-style: preserve-3d;
+}
+
+.icon {
+  display:inline-block;
+  width:100%;
+}
+
+.icon i{
+    display: block;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+}
+
+#android-wrench {
+  margin-top: .3em;
+  color: white !important;
+}
+
+#t0 {
+  background-color: red;
+  transform:  rotateY( 0deg );
+}
+
+#t1 {
+  background-color: blue;
+  transform:  rotateY( 0deg );
+}
+
+#t2 {
+  background-color: green;
+  transform:  rotateY( 0deg );
+}
+
+#t3 {
+  background-color: purple;
+  transform:  rotateY( 0deg );
+}
+
+#t4 {
+  background-color: yellow;
+  transform:  rotateY( 0deg );
+}
+
+#t5 {
+  background-color: green;
+  transform:  rotateY( 0deg );
+}
+
+#t6 {
+  background-color: orange;
+  transform:  rotateY( 0deg );
+}
+
+#t7 {
+  background-color: gray;
+  transform:  rotateY( 0deg );
+}
+
+#t8 {
+  background-color: black;
+  transform:  rotateY( 0deg );
+}

@@ -1,0 +1,238 @@
+body {
+  background-color: #C8C8C8;
+}
+
+.player{
+  background-color: red;
+}
+
+.computer{
+  background-color: blue;
+}
+
+.center {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.game-container {
+  position: relative;
+  perspective: 800px;
+  width: 300px;
+  height: 300px;
+}
+
+.vehicle {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.hood {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  backface-visibility: hidden;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  transform-origin: center top;
+  background: white;
+}
+
+.hoodopen {
+  transform: rotateX(60deg);
+}
+
+.engine {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  z-index: -1;
+}
+
+.power-source {
+  width: 300px;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+  z-index: -2;
+}
+
+.tile-container {
+  box-sizing: border-box;
+  width: 30%;
+  height: 30%;
+  margin: 1.5%;
+  float: left;
+  position: relative;
+  transform-style: preserve-3d;
+  z-index: 0;
+}
+
+.tile {
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  display: inline-block;
+  position: absolute;
+  transform-origin: right center;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.tile > div {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.tile .front {
+  background: white;
+}
+
+.tile .back {
+  transform: rotateY( 180deg );
+}
+
+.flipped{
+  transform: translateX( -100% ) rotateY( 180deg );
+  z-index: 1;
+}
+
+.player-mark {
+  text-align: center;
+  margin: 7.5% 0;
+}
+
+.board-row{
+}
+
+#game-board{
+  border-bottom: 1px solid black;
+  height: 300px;
+  width: 300px;
+  transform-style: preserve-3d;
+}
+
+.icon {
+  text-align: center;
+  margin: 30% 0;
+}
+
+.icon i{
+    display: block;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+}
+
+#android {
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+#stack-icon{
+}
+
+#android-wrench {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  margin-top: 0.3em;
+  color: black !important;
+  font-size: 0.7em;
+}
+
+#cog {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  margin-top: -1.2em;
+  color: black !important;
+}
+
+#light-bulb{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  margin-top: -1.2em;
+  color: white !important;
+background: rgba(240,220,93,1);
+background: -moz-radial-gradient(center, ellipse cover, rgba(240,220,93,1) 0%, rgba(252,246,210,1) 0%, rgba(252,246,210,1) 14%, rgba(252,246,210,0) 71%);
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(240,220,93,1)), color-stop(0%, rgba(252,246,210,1)), color-stop(14%, rgba(252,246,210,1)), color-stop(71%, rgba(252,246,210,0)));
+background: -webkit-radial-gradient(center, ellipse cover, rgba(240,220,93,1) 0%, rgba(252,246,210,1) 0%, rgba(252,246,210,1) 14%, rgba(252,246,210,0) 71%);
+background: -o-radial-gradient(center, ellipse cover, rgba(240,220,93,1) 0%, rgba(252,246,210,1) 0%, rgba(252,246,210,1) 14%, rgba(252,246,210,0) 71%);
+background: -ms-radial-gradient(center, ellipse cover, rgba(240,220,93,1) 0%, rgba(252,246,210,1) 0%, rgba(252,246,210,1) 14%, rgba(252,246,210,0) 71%);
+background: radial-gradient(ellipse at center, rgba(240,220,93,1) 0%, rgba(252,246,210,1) 0%, rgba(252,246,210,1) 14%, rgba(252,246,210,0) 71%);
+}
+
+.fa-halfx {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 0.5em;
+}
+
+
+#t0 {
+  background-color: red;
+  transform:  rotateY( 0deg );
+}
+
+#t1 {
+  background-color: blue;
+  transform:  rotateY( 0deg );
+}
+
+#t2 {
+  background-color: green;
+  transform:  rotateY( 0deg );
+}
+
+#t3 {
+  background-color: purple;
+  transform:  rotateY( 0deg );
+}
+
+#t4 {
+  background-color: yellow;
+  transform:  rotateY( 0deg );
+}
+
+#t5 {
+  background-color: green;
+  transform:  rotateY( 0deg );
+}
+
+#t6 {
+  background-color: orange;
+  transform:  rotateY( 0deg );
+}
+
+#t7 {
+  background-color: gray;
+  transform:  rotateY( 0deg );
+}
+
+#t8 {
+  background-color: black;
+  transform:  rotateY( 0deg );
+}

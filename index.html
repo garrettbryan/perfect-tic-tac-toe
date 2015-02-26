@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>3D T3</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="font-awesome-4.3.0/css/font-awesome.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row" id="title">
+            <div class="col-xs-12">
+                <h1 class="text-center">
+                    TIC TAC TOE
+                </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="game-container center">
+                    <div class="vehicle">
+                        <div class="hood" data-bind="css: { hoodopen: hoodOpen() == 1}">
+                            <div id="game-board" class="center" data-bind=" foreach: tileList">
+                                <div class="tile-container">
+                                  <div class="tile" data-bind="click: chooseOwner, css: { flipped: flipped() != 0}">
+                                    <div class="front">
+                                    </div>
+                                    <div class="back" data-bind="html: player"></div>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="engine">
+                            <img class="power-source" src="img/giphy.gif">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4">
+                <div class="icon">
+                    <span class="fa-stack fa-3x text-center">
+                        <i class="fa fa-user fa-3x fa-stack-2x text-center"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <h5 class"text-center">Time: <strong data-bind="text: gameTime()"></strong></h5>
+            </div>
+            <div class="col-xs-4">
+                <div class="icon">
+                    <span class="fa-stack fa-3x text-center" id="">
+                        <strong class="fa fa-android fa-stack-2x" id=""></strong>
+                        <strong class="fa fa-wrench fa-stack-1x" id="android-wrench" data-bind="click: openHood"></strong>
+                        <strong data-bind="visible: decision()" class="fa fa-lightbulb-o fa-stack-1x" id="light-bulb"></strong>
+                        <strong data-bind="visible: thinking()" class="fa fa-cog fa- fa-stack-1x fa-spin" id="cog"></strong>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <button id="reset" data-bind="click: reset" type="button">Reset</button>
+    </div>
+    <script src="js/lib/knockout-3.2.0.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
