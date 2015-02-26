@@ -117,6 +117,58 @@
   transform-style: preserve-3d;
 }
 
+.icon {
+  text-align: center;
+  margin: 30% 0;
+}
+
+.icon i{
+    display: block;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+}
+
+#android {
+  margin-top: -0.5em;
+  margin-left: -0.5em;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+#stack-icon{
+}
+
+#android-wrench {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  margin-top: 0.3em;
+  color: black !important;
+  font-size: 0.7em;
+}
+
+#light-bulb{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  margin-top: -1.2em;
+  color: black !important;
+}
+
+.fa-halfx {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 0.5em;
+}
+
+
 #t0 {
   background-color: red;
   transform:  rotateY( 0deg );

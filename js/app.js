@@ -57,50 +57,52 @@ var Player = function(data) {
   this.color = data.color || red;
 }
 
+var Computer = function() {
+}
 
-var Tile = function(data, model) {
+Computer.prototype.random = function() {
+  var choice = Math.floor(Math.random())*viewModel.tileList.length;
+  viewModel.tileList[choice].player('computer').flipped(1);
+}
+
+var Tile = function(data, vm) {
   this.row = ko.observable(data.row);
   this.col = ko.observable(data.col);
   this.player = ko.observable(data.player);
   this.flipped = ko.observable(0);
 
   this.chooseOwner = function() {
-    if (model.freshGame()){
+    if (vm.freshGame()){
       console.log(this.row() +"-" + this.col());
       this.player('player');
       this.flipped(1);
+      do {
+        var len = vm.tileList().length,
+          choice = Math.floor(Math.random() * len);
+        console.log(vm.tileList().length);
+      } while (vm.tileList()[choice].flipped() === 1)
+      vm.tileList()[choice].player('computer');
+      vm.tileList()[choice].flipped(1);
+      console.log(vm.tileList()[choice].player());
     }
   }
-
 }
 
 
-var ViewModel = function() {
+var viewModel = function() {
 
   var self = this;
   this.freshGame = ko.observable(1);
   this.hoodOpen = ko.observable(0);
   this.tileList = ko.observableArray([]);
-  this.cog = $('.glyphicon-cog');
-  this.cogMovement = {
-    angle: 12,
-    jitter: {
-      x: 0,
-      y: 0
-    }
-  };
 
   tiles.forEach(function(tileItem){
     self.tileList.push( new Tile(tileItem, self) );
   });
 
-  this.animateCog = function(){
-    setInterval(function(){
-        this.cog.style.transform = "rotate(" + this.cogMovement.angle + "deg)"
-        this.cog.style.transform = "translate" + this.cogMovement.
-    })
-    this.cog.style.transform = "rotate("
-  }
+  this.playerSelectTile = function() {
+
+  };
 
   this.openHood = function(){
     this.hoodOpen(this.hoodOpen() === 0 ? 1 : 0);
@@ -110,6 +112,7 @@ var ViewModel = function() {
 //setInterval(function () {alert("Hello")}, 3000);
 
   this.reset = function(){
+    console.log(self.cog);
     this.freshGame(0);
     ko.utils.arrayForEach(this.tileList(), function(tile){
       tile.flipped(0);
@@ -119,17 +122,11 @@ var ViewModel = function() {
       }, 500);
     });
   };
-/*
-  this.currentCat = ko.observable( this.catList()[0] );
+};
 
-  this.selectCat = function() {
-    self.currentCat(this);
-  }
+viewModel.player = ko.pureComputed(function(){
+});
 
-  this.incrementCounter = function() {
-    this.clickCount(this.clickCount() + 1);
-  };
-*/
-}
 
-ko.applyBindings(new ViewModel());
+
+ko.applyBindings(new viewModel());
